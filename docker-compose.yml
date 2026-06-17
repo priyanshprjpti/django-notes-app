@@ -34,10 +34,9 @@ services:
 
 
   django:
-    # build:
+   build:
       context: .
     container_name: "django_cont"
-    image: "priyanshp123/notes-app"
     command: sh -c "python manage.py migrate --no-input && gunicorn notesapp.wsgi --bind 0.0.0.0:8000 "
     networks:
       - notes-app
